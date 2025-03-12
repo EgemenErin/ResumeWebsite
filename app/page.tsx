@@ -18,7 +18,7 @@ export default function Home() {
         <nav className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center">
             <img
-                src="https://egemenerin.com/assets/img/clipboard-image-1.png"
+                src="https://egemenerin.github.io/Portfolio/assets/img/clipboard-image-1.png
                 alt="Logo"
                 className="h-8 w-auto mr-2"
             />
