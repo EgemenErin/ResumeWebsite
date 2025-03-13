@@ -250,7 +250,7 @@ const projects: Project[] = [
         "This project showcases a responsive and modern personal resume website designed to highlight professional experiences, projects, and skills. Built with Next.js for optimal performance and SEO, styled using Tailwind CSS for rapid and customizable UI development, and structured with a modular approach for maintainability.",
     "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     "image": "https://cdn.discordapp.com/attachments/1349422830810304602/1349465392141308005/image.png?ex=67d33315&is=67d1e195&hm=e10c2beedd2545ba51ac03145a9361d73dde9eddfc7cc514f0256e99e340eb91&",
-    "url": "",
+    "url": "https://www.egemenerin.com/",
     "github": "",
     "features": [
       "Responsive Design: Optimized for viewing on various devices.",
