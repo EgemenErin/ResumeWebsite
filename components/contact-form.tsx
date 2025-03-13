@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import { motion } from "framer-motion"
 
 export function ContactForm() {
     const [formState, setFormState] = useState({
@@ -8,7 +9,11 @@ export function ContactForm() {
         email: "",
         message: "",
     })
-
+    const [isFocused, setIsFocused] = useState({
+        name: false,
+        email: false,
+        message: false,
+    })
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {

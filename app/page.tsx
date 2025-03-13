@@ -8,6 +8,9 @@ import { ProjectCard } from "@/components/project-card"
 import { ContactForm } from "@/components/contact-form"
 import { SkillsSection } from "@/components/skills-section"
 import Image from 'next/image';
+import { motion } from "framer-motion"
+import {Testimonials} from "@/components/testimonials";
+import {WorkExperience} from "@/components/work-experience";
 
 export default function Home() {
   return (
@@ -23,22 +26,44 @@ export default function Home() {
                 className="h-8 w-auto mr-2"
             />
             <span className="text-2xl font-serif tracking-tighter">
-      E<span className="mx-2">G</span>E
-    </span>
+              E<span className="mx-2">G</span>E
+            </span>
           </Link>
           <Menu />
         </nav>
-
 
         {/* Hero section */}
         <div className="flex flex-col justify-between mt-32 md:mt-48">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] items-end gap-x-8">
             {/* Column 1: Heading */}
-            <h1 className="font-serif text-[clamp(3rem,15vw,12rem)] leading-[0.85] tracking-[-0.03em]">
-              <div>EGEMEN</div>
-              <div className="md:ml-[37.7%]">ERIN</div>
-            </h1>
-            <div className="mt-8 md:mt-0 md:-ml-4">
+            <motion.h1
+                className="font-serif text-[clamp(3rem,15vw,12rem)] leading-[0.85] tracking-[-0.03em]"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                EGEMEN
+              </motion.div>
+              <motion.div
+                  className="md:ml-[37.7%]"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                ERIN
+              </motion.div>
+            </motion.h1>
+            <motion.div
+                className="mt-8 md:mt-0 md:-ml-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+            >
               <Image
                   src="https://cdn.discordapp.com/attachments/1345114188795609108/1349458496697008139/f820a1eb-f743-4ad7-8fc8-5b3cc9b3efca.png?ex=67d32ca9&is=67d1db29&hm=a7df4dc42f7f1c8648f0c8a2b75388b817f8207b794f025201aab2efe894fd44&"
                   alt="headshot"
@@ -46,49 +71,78 @@ export default function Home() {
                   height={400}
                   className="object-cover mr-20"
               />
-            </div>
-            {/* Column 2: “FULLSTACK DEVELOPER” text */}
-            <div className="mt-8 md:mt-0 md:mb-8 text-right">
+            </motion.div>
+            {/* Column 2: "FULLSTACK DEVELOPER" text */}
+            <motion.div
+                className="mt-8 md:mt-0 md:mb-8 text-right"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+            >
               <div className="text-xs tracking-wider whitespace-nowrap font-medium">FULLSTACK DEVELOPER</div>
-            </div>
-
+            </motion.div>
           </div>
         </div>
 
-
         {/* Introduction */}
-        <section className="mt-40">
+        <motion.section
+            className="mt-40"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+        >
           <div className="max-w-2xl">
             <p className="text-lg md:text-xl leading-relaxed tracking-tight">
-              I'm a full-stack developer proficient in React, Next.js, TypeScript, and modern backend frameworks. I create fast, accessible, and visually captivating web applications, committed to delivering user-focused digital experiences from front-end to backend.            </p>
+              I'm a full-stack developer proficient in React, Next.js, TypeScript, and modern backend frameworks. I
+              create fast, accessible, and visually captivating web applications, committed to delivering user-focused
+              digital experiences from front-end to backend.{" "}
+            </p>
             <div className="flex gap-4 mt-8">
-              <a
-                href="https://github.com/egemenerin"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+              <motion.a
+                  href="https://github.com/egemenerin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  transition={{ duration: 0.2 }}
               >
                 <Github size={16} />
                 GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/egemenerin"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+              </motion.a>
+              <motion.a
+                  href="https://linkedin.com/in/egemenerin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  transition={{ duration: 0.2 }}
               >
                 <Linkedin size={16} />
                 LinkedIn
-              </a>
+              </motion.a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Skills Section */}
         <section className="mt-40">
           <h2 className="text-sm font-medium mb-8 tracking-wider">SKILLS & TECHNOLOGIES</h2>
           <SkillsSection />
         </section>
+
+        {/* Work Experience Section */}
+        <motion.section
+            id="experience"
+            className="mt-40"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+        >
+          <h2 className="text-sm font-medium mb-8 tracking-wider">WORK EXPERIENCE</h2>
+          <WorkExperience />
+        </motion.section>
 
         {/* Projects */}
         <section id="projects" className="mt-40 md:mt-60">
@@ -100,8 +154,29 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Form */}
-        <section id="contact" className="mt-40 md:mt-60 mb-32">
+        {/* Testimonials Section */}
+        <motion.section
+            id="testimonials"
+            className="mt-40 md:mt-60"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+        >
+          <h2 className="text-sm font-medium mb-8 tracking-wider">WHAT PEOPLE SAY</h2>
+          <Testimonials />
+        </motion.section>
+
+
+
+        <motion.section
+            id="contact"
+            className="mt-40 md:mt-60 mb-32"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+        >
           <h2 className="text-sm font-medium mb-8 tracking-wider">GET IN TOUCH</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
@@ -109,36 +184,42 @@ export default function Home() {
                 Interested in working together? Feel free to reach out through the contact form or directly via email.
               </p>
               <div className="space-y-4">
-                <a
-                  href="mailto:work@egemenerin.com"
-                  className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                <motion.a
+                    href="mailto:work@egemenerin.com"
+                    className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    transition={{ duration: 0.2 }}
                 >
                   <Mail size={16} />
                   work@egemenerin.com
-                </a>
-                <a
-                  href="https://github.com/egemenerin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                </motion.a>
+                <motion.a
+                    href="https://github.com/egemenerin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    transition={{ duration: 0.2 }}
                 >
                   <Github size={16} />
                   GitHub
-                </a>
-                <a
-                  href="https://linkedin.com/in/egemenerin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                </motion.a>
+                <motion.a
+                    href="https://linkedin.com/in/egemenerin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm hover:underline underline-offset-4"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    transition={{ duration: 0.2 }}
                 >
                   <Linkedin size={16} />
                   LinkedIn
-                </a>
+                </motion.a>
               </div>
             </div>
             <ContactForm />
           </div>
-        </section>
+        </motion.section>
       </main>
     </>
   )
@@ -198,25 +279,6 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Audio Recorder & Shazam Clone",
-    category: "Machine Learning",
-    description: "An audio fingerprinting application inspired by Shazam.",
-    longDescription:
-        "This project allows users to record audio, visualize the waveform in real time, generate unique fingerprints for audio clips, and identify songs by matching them against a database. It also supports adding new songs to the fingerprint database.",
-    tech: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
-    image: "https://cdn.discordapp.com/attachments/1349422830810304602/1349423945086140549/418625081-9812ccf3-962e-4a51-8291-61955d35ade7.png?ex=67d30c7b&is=67d1bafb&hm=d7dda48ae9d724641375629f90b50aa29720d725076e8f47e47b6ef1bff72767&",
-    url: "https://github.com/EgemenErin/ShazamAlgorithm",
-    github: "https://github.com/EgemenErin/ShazamAlgorithm",
-    features: [
-      "Audio Recording: Capture audio from your device's microphone.",
-      "Real-Time Visualization: Display a live audio waveform during recording.",
-      "Audio Fingerprinting: Generate unique fingerprints for audio clips.",
-      "Song Identification: Match audio fingerprints with a pre-built database to identify songs.",
-      "Database Management: Add new songs to the fingerprint database.",
-    ],
-  },
-  {
-    id: 4,
     title: "Book Collection App",
     category: "Web Development",
     description: "A simple Flask web application to manage a collection of books.",
@@ -232,6 +294,25 @@ const projects: Project[] = [
       "Remove Book: Delete a book from the database.",
       "Update Rating: Edit the rating of an existing book.",
       "Persistent Storage: Data is saved in a SQLite database.",
+    ],
+  },
+  {
+    id: 4,
+    title: "Audio Recorder & Shazam Clone",
+    category: "Data structures and Algorithms, Machine Learning",
+    description: "An audio fingerprinting application inspired by Shazam.",
+    longDescription:
+        "This project allows users to record audio, visualize the waveform in real time, generate unique fingerprints for audio clips, and identify songs by matching them against a database. It also supports adding new songs to the fingerprint database.",
+    tech: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
+    image: "https://cdn.discordapp.com/attachments/1349422830810304602/1349423945086140549/418625081-9812ccf3-962e-4a51-8291-61955d35ade7.png?ex=67d30c7b&is=67d1bafb&hm=d7dda48ae9d724641375629f90b50aa29720d725076e8f47e47b6ef1bff72767&",
+    url: "https://github.com/EgemenErin/ShazamAlgorithm",
+    github: "https://github.com/EgemenErin/ShazamAlgorithm",
+    features: [
+      "Audio Recording: Capture audio from your device's microphone.",
+      "Real-Time Visualization: Display a live audio waveform during recording.",
+      "Audio Fingerprinting: Generate unique fingerprints for audio clips.",
+      "Song Identification: Match audio fingerprints with a pre-built database to identify songs.",
+      "Database Management: Add new songs to the fingerprint database.",
     ],
   },
   {
