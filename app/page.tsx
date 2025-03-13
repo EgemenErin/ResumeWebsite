@@ -65,7 +65,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.7 }}
             >
               <Image
-                  src="https://cdn.discordapp.com/attachments/1345114188795609108/1349458496697008139/f820a1eb-f743-4ad7-8fc8-5b3cc9b3efca.png?ex=67d32ca9&is=67d1db29&hm=a7df4dc42f7f1c8648f0c8a2b75388b817f8207b794f025201aab2efe894fd44&"
+                  src="/images/headshot.jpg"
                   alt="headshot"
                   width={400}
                   height={400}
@@ -251,7 +251,7 @@ const projects: Project[] = [
     "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     "image": "https://cdn.discordapp.com/attachments/1349422830810304602/1349465392141308005/image.png?ex=67d33315&is=67d1e195&hm=e10c2beedd2545ba51ac03145a9361d73dde9eddfc7cc514f0256e99e340eb91&",
     "url": "https://www.egemenerin.com/",
-    "github": "",
+    "github": "https://github.com/EgemenErin/ResumeWebsite/",
     "features": [
       "Responsive Design: Optimized for viewing on various devices.",
       "SEO Friendly: Built with Next.js for improved SEO performance.",
@@ -268,7 +268,7 @@ const projects: Project[] = [
     longDescription:
         "The website allows users to seamlessly convert fiat currency into cryptocurrency. Users can sign up, securely link their digital wallets, and begin purchasing crypto instantly. The platform offers real-time market data, user-friendly dashboards, and robust security measures, ensuring a smooth and safe experience for all users.",
     tech: ["Next.js", "Tailwind CSS", "TypeScript"],
-    image: "https://cdn.discordapp.com/attachments/1349422830810304602/1349422842550288404/image.png?ex=67d30b74&is=67d1b9f4&hm=6277fde8623ae78b248f5f4d2ad55d49b1c2cf01ebf84e37443a90967b626791&",
+    image: "images/oneramp.png",
     url: "https://oneramp.io",
     github: "",
     features: [
@@ -285,7 +285,7 @@ const projects: Project[] = [
     longDescription:
         "This app allows users to view all books on the homepage, add new books with their title, author, and rating, remove books from the database, and update book ratings. Data is stored persistently in a SQLite database.",
     tech: ["Python", "Flask", "SQLite", "Flask-WTF", "Bootstrap"],
-    image: "https://cdn.discordapp.com/attachments/1349422830810304602/1349425105918361682/382463305-b5f86c4f-2d4b-4b1b-97b8-7715db137495.png?ex=67d30d90&is=67d1bc10&hm=8ab2551e056abc08f845a95df10947115ebe007ce9186383ec1000e0ba00d715&",
+    image: "images/book.png",
     url: "https://github.com/EgemenErin/Book_Library_App",
     github: "https://github.com/EgemenErin/Book_Library_App",
     features: [
@@ -304,7 +304,7 @@ const projects: Project[] = [
     longDescription:
         "This project allows users to record audio, visualize the waveform in real time, generate unique fingerprints for audio clips, and identify songs by matching them against a database. It also supports adding new songs to the fingerprint database.",
     tech: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
-    image: "https://cdn.discordapp.com/attachments/1349422830810304602/1349423945086140549/418625081-9812ccf3-962e-4a51-8291-61955d35ade7.png?ex=67d30c7b&is=67d1bafb&hm=d7dda48ae9d724641375629f90b50aa29720d725076e8f47e47b6ef1bff72767&",
+    image: "images/audio.png",
     url: "https://github.com/EgemenErin/ShazamAlgorithm",
     github: "https://github.com/EgemenErin/ShazamAlgorithm",
     features: [
@@ -323,7 +323,7 @@ const projects: Project[] = [
     longDescription:
         "This project visually demonstrates the A* algorithm on a grid. Users can interactively set the start and end nodes, place obstacles, and reset nodes—all while watching the algorithm compute the shortest path in real time. The code is organized into separate modules for clarity and easy maintenance.",
     tech: ["Python", "Pygame"],
-    image: "https://cdn.discordapp.com/attachments/1349422830810304602/1349431761544941680/image.png?ex=67d313c3&is=67d1c243&hm=ff86a0fdef5081101dfccebf6c7e4ec4d2ae50dfaae9ba72fea066c0b13ee2cc&",
+    image: "images/pathfind.png",
     url: "https://www.youtube.com/watch?v=O0MvdhQdj6I&t=6s",
     github: "https://github.com/EgemenErin/Pathfinding_Visualizer",
     features: [
