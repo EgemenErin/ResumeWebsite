@@ -36,6 +36,7 @@ A responsive and visually appealing personal resume website built with **Next.js
 ├── package.json
 ├── tailwind.config.ts
 └── tsconfig.json
+.
 ```
 
 ## Getting Started
