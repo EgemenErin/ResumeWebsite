@@ -1,11 +1,5 @@
 # Egemen Erin — Data Analyst Portfolio
 
-Interactive portfolio site for **Egemen Erin**, a data analyst based in Poznan, Poland. Built with Next.js and GSAP scroll animations.
-
-## Live site
-
-Deploy from this repo or run locally — see [Setup](#setup) below.
-
 ## Features
 
 - Hero section with animated typography and portrait
@@ -23,39 +17,6 @@ Deploy from this repo or run locally — see [Setup](#setup) below.
 - [GSAP](https://gsap.com/) + ScrollTrigger
 - [next/font](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) — Cormorant Garamond & Manrope
 
-## Setup
-
-```bash
-git clone https://github.com/EgemenErin/ResumeWebsite.git
-cd ResumeWebsite
-npm install
-cp .env.example .env.local
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-### Environment variables
-
-| Variable | Description |
-| --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Production URL for canonical links, OG tags, and sitemap |
-
-Example:
-
-```env
-NEXT_PUBLIC_SITE_URL=https://www.egemenerin.com
-```
-
-## Scripts
-
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start development server |
-| `npm run build` | Production build |
-| `npm run start` | Serve production build |
-| `npm run lint` | Run ESLint |
-
 ## Project structure
 
 ```
@@ -66,14 +27,6 @@ src/
 └── lib/              # Site config and metadata helpers
 public/images/        # Portrait, project screenshots, logos
 ```
-
-## Deploy
-
-Works on [Vercel](https://vercel.com), Netlify, or any Node.js host that supports Next.js.
-
-1. Connect this repository
-2. Set `NEXT_PUBLIC_SITE_URL` to your production domain
-3. Build command: `npm run build`
 
 ## Contact
 
