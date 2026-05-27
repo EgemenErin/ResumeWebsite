@@ -31,7 +31,7 @@ export const projects: Project[] = [
     tools: ["React Native", "Expo", "TypeScript", "Node.js", "MongoDB", "MySQL", "AI recommendations"],
     status: "Closed source",
     href: "https://github.com/Muscledia/Muscledia-Frontend",
-    image: "https://www.egemenerin.com/_next/image?url=%2Fimages%2Fmuscledia.png&w=3840&q=75",
+    image: "/images/muscledia.png",
   },
   {
     title: "QGIS Deepness",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     tools: ["Documentation", "QGIS", "Remote sensing", "Deep learning workflows", "User guidance"],
     status: "Documentation support",
     href: "https://qgis-plugin-deepness.readthedocs.io/en/latest/",
-    image: "https://www.egemenerin.com/_next/image?url=%2Fimages%2Fdeepness.png&w=3840&q=75",
+    image: "/images/deepness.png",
   },
   {
     title: "Emerging Trends in Software",
