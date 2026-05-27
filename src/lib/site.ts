@@ -2,9 +2,9 @@ export const siteConfig = {
   name: "Egemen Erin",
   title: "Egemen Erin | Data Analyst Portfolio",
   description:
-    "Data analyst portfolio for Egemen Erin — product analytics, geospatial research tooling, IBM Cognos dashboards, Python, SQL, Power BI, and machine learning projects based in Poznan, Poland.",
+    "I'm a data analyst with a computer science background, focused on turning messy, complex datasets into something actually useful, whether that's a geospatial model for academic researchers, a product metric that changed how a team built their app, or a dashboard that makes a trend visible before it becomes obvious.",
   shortDescription:
-    "Data analyst turning complex datasets into product metrics, dashboards, and research-ready insights.",
+    "I'm a data analyst with a computer science background, focused on turning messy, complex datasets into something actually useful, whether that's a geospatial model for academic researchers, a product metric that changed how a team built their app, or a dashboard that makes a trend visible before it becomes obvious.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.egemenerin.com",
   locale: "en_US",
   email: "egemeneriin@protonmail.com",
