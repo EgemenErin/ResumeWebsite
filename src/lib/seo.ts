@@ -51,8 +51,8 @@ export function buildPageMetadata(overrides?: Partial<Metadata>): Metadata {
       images: [ogImage.url],
     },
     icons: {
-      icon: siteConfig.logo,
-      apple: siteConfig.logo,
+      icon: siteConfig.favicon,
+      apple: siteConfig.favicon,
     },
     ...overrides,
   };

@@ -223,9 +223,9 @@ export function PortfolioExperience() {
           <Link href="/" className="brand" aria-label="Egemen Erin home">
             <Image
               src={siteConfig.logo}
-              alt="Egemen — data analyst"
-              width={140}
-              height={48}
+              alt="Egemen Erin"
+              width={72}
+              height={40}
               priority
               className="brand-logo"
             />
@@ -509,9 +509,9 @@ export function PortfolioExperience() {
             href="https://www.egemenerin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            title="Egemen Erin resume"
+            title="Egemen Erin portfolio"
           >
-            Resume
+            Current portfolio
           </a>
         </div>
       </footer>
