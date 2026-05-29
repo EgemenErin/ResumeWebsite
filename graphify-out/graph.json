@@ -1,0 +1,272 @@
+{
+  "nodes": [
+    {
+      "id": "file::next_env_d",
+      "label": "next-env.d.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\next-env.d.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\next-env.d.ts:1"
+    },
+    {
+      "id": "file::next_config",
+      "label": "next.config.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\next.config.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\next.config.ts:1"
+    },
+    {
+      "id": "file::layout",
+      "label": "layout.tsx",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\layout.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\layout.tsx:1"
+    },
+    {
+      "id": "layout::rootlayout",
+      "label": "RootLayout",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\layout.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\layout.tsx:28"
+    },
+    {
+      "id": "file::manifest",
+      "label": "manifest.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\manifest.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\manifest.ts:1"
+    },
+    {
+      "id": "manifest::manifest",
+      "label": "manifest",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\manifest.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\manifest.ts:4"
+    },
+    {
+      "id": "file::page",
+      "label": "page.tsx",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\page.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\page.tsx:1"
+    },
+    {
+      "id": "page::home",
+      "label": "Home",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\page.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\page.tsx:4"
+    },
+    {
+      "id": "file::robots",
+      "label": "robots.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\robots.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\robots.ts:1"
+    },
+    {
+      "id": "robots::robots",
+      "label": "robots",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\robots.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\robots.ts:4"
+    },
+    {
+      "id": "file::sitemap",
+      "label": "sitemap.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\sitemap.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\sitemap.ts:1"
+    },
+    {
+      "id": "sitemap::sitemap",
+      "label": "sitemap",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\sitemap.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\sitemap.ts:4"
+    },
+    {
+      "id": "file::portfolioexperience",
+      "label": "PortfolioExperience.tsx",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx:1"
+    },
+    {
+      "id": "PortfolioExperience::updatenow",
+      "label": "updateNow",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx:29"
+    },
+    {
+      "id": "PortfolioExperience::getscrolldistance",
+      "label": "getScrollDistance",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx:116"
+    },
+    {
+      "id": "PortfolioExperience::handlepointermove",
+      "label": "handlePointerMove",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx:199"
+    },
+    {
+      "id": "file::structureddata",
+      "label": "StructuredData.tsx",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\StructuredData.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\StructuredData.tsx:1"
+    },
+    {
+      "id": "structureddata::structureddata",
+      "label": "StructuredData",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\StructuredData.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\StructuredData.tsx:4"
+    },
+    {
+      "id": "file::portfolio",
+      "label": "portfolio.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\data\\portfolio.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\data\\portfolio.ts:1"
+    },
+    {
+      "id": "file::seo",
+      "label": "seo.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\seo.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\seo.ts:1"
+    },
+    {
+      "id": "seo::buildpagemetadata",
+      "label": "buildPageMetadata",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\seo.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\seo.ts:4"
+    },
+    {
+      "id": "file::site",
+      "label": "site.ts",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\site.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\site.ts:1"
+    },
+    {
+      "id": "site::absoluteurl",
+      "label": "absoluteUrl",
+      "fileType": "code",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\site.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\site.ts:40"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file::layout",
+      "target": "layout::rootlayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\layout.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\layout.tsx:28",
+      "weight": 1
+    },
+    {
+      "source": "file::manifest",
+      "target": "manifest::manifest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\manifest.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\manifest.ts:4",
+      "weight": 1
+    },
+    {
+      "source": "file::page",
+      "target": "page::home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\page.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\page.tsx:4",
+      "weight": 1
+    },
+    {
+      "source": "file::robots",
+      "target": "robots::robots",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\robots.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\robots.ts:4",
+      "weight": 1
+    },
+    {
+      "source": "file::sitemap",
+      "target": "sitemap::sitemap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\sitemap.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\app\\sitemap.ts:4",
+      "weight": 1
+    },
+    {
+      "source": "file::portfolioexperience",
+      "target": "PortfolioExperience::updatenow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx:29",
+      "weight": 1
+    },
+    {
+      "source": "file::portfolioexperience",
+      "target": "PortfolioExperience::getscrolldistance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx:116",
+      "weight": 1
+    },
+    {
+      "source": "file::portfolioexperience",
+      "target": "PortfolioExperience::handlepointermove",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\PortfolioExperience.tsx:199",
+      "weight": 1
+    },
+    {
+      "source": "file::structureddata",
+      "target": "structureddata::structureddata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\StructuredData.tsx",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\components\\StructuredData.tsx:4",
+      "weight": 1
+    },
+    {
+      "source": "file::seo",
+      "target": "seo::buildpagemetadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\seo.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\seo.ts:4",
+      "weight": 1
+    },
+    {
+      "source": "file::site",
+      "target": "site::absoluteurl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "sourceFile": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\site.ts",
+      "sourceLocation": "C:\\Users\\egeme\\data-analyst-portfolio\\src\\lib\\site.ts:40",
+      "weight": 1
+    }
+  ],
+  "metadata": {
+    "files": 20,
+    "nodes": 23,
+    "edges": 11,
+    "builtAt": "2026-05-27T15:08:41.538Z"
+  }
+}

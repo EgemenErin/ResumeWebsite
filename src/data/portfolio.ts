@@ -20,6 +20,34 @@ export type Metric = {
 
 export const projects: Project[] = [
   {
+    title: "Emerging Trends in Software",
+    eyebrow: "IBM analytics report / Cognos dashboard",
+    summary:
+      "A Stack Overflow Developer Survey analysis that turns technology adoption signals into hiring and learning priorities.",
+    problem:
+      "Which programming languages, databases, and platforms are stable today, desired tomorrow, and worth investing in?",
+    outcome:
+      "Built a Cognos-backed report covering language demand, database shifts, cloud adoption, and developer demographics.",
+    tools: ["IBM Cognos", "Stack Overflow Survey", "Data wrangling", "Dashboards", "Trend analysis"],
+    status: "Presentation project",
+    href: "https://drive.google.com/file/d/1xZEhXQDpwWc3qmTcQue6HCnMO8QvQe4Q/view?usp=sharing",
+    image: "/images/emerging-trends.png",
+  },
+  {
+    title: "Customer Churn & Revenue Analytics",
+    eyebrow: "Data Analysis Project",
+    summary:
+      "Built an automated reusable ETL pipeline in Pandas to clean and transform a 7,000+ row telecom dataset, handling hidden nulls, type casting, target binarization, and tenure cohort engineering. Built an interactive Power BI dashboard to analyze customer churn trends.",
+    problem:
+      "How can we identify customers who are likely to churn and take proactive measures to retain them? What are the most important factors that influence churn?",
+    outcome:
+      "Quantified $139K in at-risk monthly recurring revenue and identified Month-to-Month contracts as the primary churn driver, producing 4 actionable retention recommendations.",
+    tools: ["Power BI", "Data Analysis", "Data Visualization", "Dashboard Design", "Pandas", "Python"],
+    status: "Presentation project",
+    href: "https://canva.link/ixiil8971bf7phi",
+    image: "/images/customeranalysis.png",
+  },
+  {
     title: "Muscledia",
     eyebrow: "Product analytics / diploma project",
     summary:
@@ -46,20 +74,6 @@ export const projects: Project[] = [
     status: "Documentation support",
     href: "https://qgis-plugin-deepness.readthedocs.io/en/latest/",
     image: "/images/deepness.png",
-  },
-  {
-    title: "Emerging Trends in Software",
-    eyebrow: "IBM analytics report / Cognos dashboard",
-    summary:
-      "A Stack Overflow Developer Survey analysis that turns technology adoption signals into hiring and learning priorities.",
-    problem:
-      "Which programming languages, databases, and platforms are stable today, desired tomorrow, and worth investing in?",
-    outcome:
-      "Built a Cognos-backed report covering language demand, database shifts, cloud adoption, and developer demographics.",
-    tools: ["IBM Cognos", "Stack Overflow Survey", "Data wrangling", "Dashboards", "Trend analysis"],
-    status: "Presentation project",
-    href: "https://drive.google.com/file/d/1xZEhXQDpwWc3qmTcQue6HCnMO8QvQe4Q/view?usp=sharing",
-    image: "/images/emerging-trends.png",
   },
 ];
 
