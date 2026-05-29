@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { credentials, processSteps, projects, skillGroups } from "@/data/portfolio";
+import { siteConfig } from "@/lib/site";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -220,10 +221,15 @@ export function PortfolioExperience() {
       <section className="portfolio-frame" data-frame>
         <nav className="nav" aria-label="Primary navigation" data-nav>
           <Link href="/" className="brand" aria-label="Egemen Erin home">
-            Egemen
-            <span>Erin</span>
+            <Image
+              src={siteConfig.logo}
+              alt="Egemen — data analyst"
+              width={140}
+              height={48}
+              priority
+              className="brand-logo"
+            />
           </Link>
-          <p>Data analyst</p>
           <p>Poznan, Poland</p>
           <div className="nav-links">
             <a href="#projects">Work</a>
@@ -503,9 +509,9 @@ export function PortfolioExperience() {
             href="https://www.egemenerin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            title="Egemen Erin portfolio"
+            title="Egemen Erin resume"
           >
-            Current portfolio
+            Resume
           </a>
         </div>
       </footer>

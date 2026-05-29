@@ -121,24 +121,22 @@ button {
 
 .nav {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr auto;
+  grid-template-columns: 1.1fr 1fr auto;
   gap: 1rem;
-  align-items: start;
+  align-items: center;
   padding: 1.8rem 2rem 0;
   font-size: 0.74rem;
 }
 
 .brand {
+  display: block;
   width: max-content;
-  font-family: var(--font-display), serif;
-  font-size: 1.08rem;
-  font-weight: 700;
-  line-height: 0.8;
-  letter-spacing: -0.04em;
 }
 
-.brand span {
+.brand-logo {
   display: block;
+  width: auto;
+  height: 2.4rem;
 }
 
 .nav p {

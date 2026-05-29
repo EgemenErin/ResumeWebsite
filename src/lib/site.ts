@@ -34,7 +34,8 @@ export const siteConfig = {
     portfolio: "https://www.egemenerin.com/",
     email: "mailto:egemeneriin@protonmail.com",
   },
-  ogImage: "/images/pfp.png",
+  ogImage: "/images/og.png",
+  logo: "/images/logo.png",
 } as const;
 
 export function absoluteUrl(path = ""): string {
