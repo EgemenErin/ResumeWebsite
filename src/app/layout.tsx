@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { buildPageMetadata } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -32,7 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${body.variable}`}>{children}</body>
+      <body className={`${display.variable} ${body.variable}`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
