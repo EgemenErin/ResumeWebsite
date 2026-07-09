@@ -214,8 +214,8 @@ export function PortfolioExperience() {
             <div className="pill" data-float>
               Python / SQL / PowerBI 
             </div>
-            <h1 aria-label="I turn complex datasets into decisions people can act on.">
-              {["I", "turn", "complex", "datasets", "into", "decisions", "people", "can", "act", "on."].map(
+            <h1 aria-label="I build the pipelines that turn raw data into decisions.">
+              {["I", "build", "the", "pipelines", "that", "turn", "raw", "data", "into", "decisions."].map(
                 (word) => (
                   <span key={word} data-hero-word>
                     {word}
@@ -224,7 +224,11 @@ export function PortfolioExperience() {
               )}
             </h1>
             <p className="hero-text">
-              I&apos;m a data analyst with a computer science background, focused on turning messy, complex datasets into something actually useful, whether that&apos;s a geospatial model for academic researchers, a product metric that changed how a team built their app, or a dashboard that makes a trend visible before it becomes obvious.
+              I&apos;m a data analyst and engineer with a computer science background. founded,{" "}
+              <Link href="/waitlist">for(u)</Link> a non-profit organization which aims to connect
+              developers, analysts, and engineers who struggled to find their people in the local tech
+              scene. I am also currently working on Athena, an open source ai data analysis tool that
+              is on work in progress.
             </p>
             <div className="hero-actions">
               <a href="#projects">View projects</a>
@@ -258,21 +262,21 @@ export function PortfolioExperience() {
       </section>
 
       <section className="section intro-grid" data-reveal>
-        <h2>Analysis is not only about finding the number. It is about making the next move obvious.</h2>
+        <h2>Good data work is not just the number. It is the reliable pipeline that makes the next move obvious.</h2>
         <div className="intro-cards">
           <article>
             <span>01</span>
-            <h3>Product behavior</h3>
-            <p>Measure whether features change habit, retention, and participation.</p>
+            <h3>Data pipelines &amp; ETL</h3>
+            <p>Build and schedule pipelines that move raw data from API and source to warehouse reliably.</p>
           </article>
           <article>
             <span>02</span>
-            <h3>Data pipelines & engineering</h3>
-            <p>Build and maintain pipelines that move raw data from source to insight reliably.</p>
+            <h3>Modeling &amp; automation</h3>
+            <p>Clean, transform, and automate datasets so they stay trustworthy without manual work.</p>
           </article>
           <article>
             <span>03</span>
-            <h3>Executive dashboards</h3>
+            <h3>Dashboards &amp; analysis</h3>
             <p>Condense noisy survey and project data into concise, decision-ready reporting.</p>
           </article>
         </div>
@@ -400,7 +404,7 @@ export function PortfolioExperience() {
       <section className="section dashboard-section" id="dashboard" data-reveal>
         <div className="dashboard-copy">
           <p className="section-kicker">Personal telemetry</p>
-          <h2>The analyst, not just the analysis.</h2> 
+          <h2>The engineer, not just the pipeline.</h2> 
           <h2>A small dashboard of the life behind the work.</h2>
           <p>
             Yes, I built a dashboard about myself. No, I&apos;m not sorry.
@@ -416,7 +420,7 @@ export function PortfolioExperience() {
             <article className="life-stat-card wide">
               <span>{hoursAlive === null ? "calculating" : hoursAlive.toLocaleString()}</span>
               <h3>Hours alive</h3>
-              <p>Honestly, pretty impressive for a data analyst.</p>
+              <p>Honestly, pretty impressive uptime for a data engineer.</p>
             </article>
             <article className="life-stat-card">
               <span>{daysInPoland === null ? "..." : daysInPoland.toLocaleString()}</span>
@@ -466,7 +470,7 @@ export function PortfolioExperience() {
       <section className="section skills-section" id="skills" data-reveal>
         <div className="section-heading">
           <p className="section-kicker">Skills and credentials</p>
-          <h2>A practical analytics stack with engineering depth.</h2>
+          <h2>An engineering-first data stack with analytics depth.</h2>
         </div>
         <div className="skills-layout">
           <div className="skill-groups">
@@ -501,7 +505,7 @@ export function PortfolioExperience() {
 
       <footer className="section contact-section" id="contact" data-reveal>
         <p className="section-kicker">Let&apos;s connect</p>
-        <h2>Interested in data-driven products, dashboards, or research tooling?</h2>
+        <h2>Interested in data pipelines, ETL, or data-driven products?</h2>
         <div className="contact-links">
           <a href="mailto:egemeneriin@protonmail.com" title="Email Egemen Erin">
             Email
@@ -515,12 +519,20 @@ export function PortfolioExperience() {
             GitHub
           </a>
           <a
-            href="https://www.egemenerin.com/"
+            href={siteConfig.links.resumes.dataAnalyst}
             target="_blank"
             rel="noopener noreferrer"
-            title="Egemen Erin portfolio"
+            title="Egemen Erin data analyst resume"
           >
-            Current portfolio
+            Data Analyst Resume
+          </a>
+          <a
+            href={siteConfig.links.resumes.dataEngineer}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Egemen Erin data engineer resume"
+          >
+            Data Engineer Resume
           </a>
         </div>
       </footer>

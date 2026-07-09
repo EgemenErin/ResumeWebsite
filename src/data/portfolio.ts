@@ -49,7 +49,7 @@ export const projects: Project[] = [
   },
   {
     title: "Customer Churn & Revenue Analytics",
-    eyebrow: "Data Analysis Project",
+    eyebrow: "Analytics engineering / ETL pipeline",
     summary:
       "Built an automated reusable ETL pipeline in Pandas to clean and transform a 7,000+ row telecom dataset, handling hidden nulls, type casting, target binarization, and tenure cohort engineering. Built an interactive Power BI dashboard to analyze customer churn trends.",
     problem:
@@ -144,6 +144,10 @@ export const metrics: Metric[] = [
 ];
 
 export const skillGroups = [
+  {
+    title: "Data Engineering",
+    skills: ["ETL pipelines", "Azure SQL", "REST API ingestion", "Feature engineering", "Pipeline scheduling"],
+  },
   {
     title: "Analysis",
     skills: ["Data wrangling", "Exploratory analysis", "Reporting", "Trend analysis", "Dashboard design"],

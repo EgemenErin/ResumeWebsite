@@ -201,6 +201,18 @@ button {
   line-height: 1.8;
 }
 
+.hero-text a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(31, 52, 28, 0.35);
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 180ms ease;
+}
+
+.hero-text a:hover {
+  text-decoration-color: var(--ink);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

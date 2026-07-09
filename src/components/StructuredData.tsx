@@ -64,7 +64,7 @@ export function StructuredData() {
       {
         "@type": "ItemList",
         "@id": `${siteConfig.url}/#projects`,
-        name: "Selected analytics projects",
+        name: "Selected data engineering and analytics projects",
         itemListElement: projects.map((project, index) => ({
           "@type": "ListItem",
           position: index + 1,
