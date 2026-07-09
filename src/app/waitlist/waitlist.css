@@ -1,0 +1,345 @@
+.foru-root {
+  --bg: #191a2e;
+  --bg-panel: #20223c;
+  --grid: rgba(184, 164, 232, 0.05);
+  --fg: #d7d4ee;
+  --dim: #837fa8;
+  --green: #b9a6ec;
+  --green-deep: #8b6fd6;
+  --amber: #f0a868;
+  --periwinkle: #c3cbee;
+  --red: #ff7a8a;
+  --line: rgba(184, 164, 232, 0.16);
+  --glow: 0 0 9px rgba(184, 164, 232, 0.5);
+
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: clamp(0.75rem, 3vw, 2.5rem);
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(184, 164, 232, 0.07), transparent 55%),
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 100% 2.4rem,
+    var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: clamp(0.8rem, 0.72rem + 0.4vw, 0.95rem);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CRT scanlines + flicker overlay */
+.foru-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.22) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: multiply;
+  animation: foru-flicker 4.5s infinite steps(60);
+}
+
+/* vignette */
+.foru-root::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 58%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+@keyframes foru-flicker {
+  0%, 96%, 100% { opacity: 0.55; }
+  97% { opacity: 0.4; }
+  98% { opacity: 0.75; }
+  99% { opacity: 0.5; }
+}
+
+.foru-window {
+  position: relative;
+  z-index: 4;
+  flex: 0 0 auto;
+  width: min(46rem, 100%);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(180deg, rgba(184, 164, 232, 0.02), transparent 30%),
+    var(--bg-panel);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 40px 120px rgba(0, 0, 0, 0.7),
+    inset 0 0 80px rgba(184, 164, 232, 0.03);
+  overflow: hidden;
+}
+
+.foru-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(184, 164, 232, 0.04);
+  font-size: 0.72rem;
+  color: var(--dim);
+  letter-spacing: 0.02em;
+}
+
+.foru-dot {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  opacity: 0.85;
+}
+.foru-dot.r { background: #f0a868; }
+.foru-dot.y { background: #c3cbee; }
+.foru-dot.g { background: #b9a6ec; }
+
+.foru-titlebar-name {
+  margin-left: 0.5rem;
+}
+.foru-titlebar-name b {
+  color: var(--fg);
+  font-weight: 500;
+}
+.foru-titlebar-path {
+  margin-left: auto;
+  color: rgba(93, 111, 102, 0.7);
+}
+
+.foru-screen {
+  padding: 1.35rem 1.35rem 1.5rem;
+  min-height: 22rem;
+}
+
+/* ascii banner */
+.foru-banner {
+  margin: 0 0 1rem;
+  color: var(--green);
+  font-size: clamp(0.62rem, 0.5rem + 0.9vw, 0.92rem);
+  line-height: 1.15;
+  white-space: pre;
+  text-shadow: var(--glow);
+  overflow-x: auto;
+}
+
+.foru-tagline {
+  margin: 0 0 1.25rem;
+  color: var(--dim);
+}
+.foru-tagline .amber { color: var(--amber); }
+
+.foru-log {
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.foru-line {
+  opacity: 0;
+  animation: foru-appear 0.01s forwards;
+}
+.foru-line .prompt { color: var(--green); text-shadow: var(--glow); }
+.foru-line .flag { color: var(--amber); }
+.foru-line .ok { color: var(--green); }
+.foru-line .muted { color: var(--dim); }
+.foru-line .cmt { color: rgba(93, 111, 102, 0.75); }
+
+@keyframes foru-appear {
+  to { opacity: 1; }
+}
+
+.foru-hr {
+  height: 1px;
+  margin: 1.1rem 0;
+  background: repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 12px);
+  border: 0;
+}
+
+.foru-field {
+  margin: 0 0 1rem;
+}
+
+.foru-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--dim);
+}
+.foru-label .prompt { color: var(--green); text-shadow: var(--glow); }
+
+.foru-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.35);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.foru-input-row:focus-within {
+  border-color: var(--green-deep);
+  box-shadow: 0 0 0 1px var(--green-deep), 0 0 16px rgba(184, 164, 232, 0.12);
+}
+.foru-caret {
+  color: var(--green);
+  text-shadow: var(--glow);
+  user-select: none;
+}
+
+.foru-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  caret-color: var(--green);
+}
+.foru-input::placeholder {
+  color: rgba(93, 111, 102, 0.6);
+}
+
+.foru-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.5rem;
+}
+
+.foru-role {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--dim);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+.foru-role:hover {
+  border-color: var(--green-deep);
+  color: var(--fg);
+}
+.foru-role .key {
+  color: var(--amber);
+}
+.foru-role[data-active="true"] {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(184, 164, 232, 0.08);
+  text-shadow: var(--glow);
+}
+.foru-role[data-active="true"] .key {
+  color: var(--green);
+}
+
+.foru-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--green-deep);
+  border-radius: 0.35rem;
+  background: rgba(184, 164, 232, 0.08);
+  color: var(--green);
+  font: inherit;
+  cursor: pointer;
+  text-shadow: var(--glow);
+  transition: all 0.15s ease;
+}
+.foru-submit:hover:not(:disabled) {
+  background: var(--green);
+  color: #191a2e;
+  text-shadow: none;
+  box-shadow: 0 0 24px rgba(184, 164, 232, 0.35);
+}
+.foru-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.foru-status {
+  margin-top: 1rem;
+  min-height: 1.7rem;
+}
+.foru-status.err { color: var(--red); }
+.foru-status.ok { color: var(--green); text-shadow: var(--glow); }
+
+.foru-cursor {
+  display: inline-block;
+  width: 0.55rem;
+  height: 1.05em;
+  margin-left: 0.1rem;
+  translate: 0 0.18em;
+  background: var(--green);
+  box-shadow: var(--glow);
+  animation: foru-blink 1.05s steps(2) infinite;
+}
+@keyframes foru-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.foru-success {
+  display: grid;
+  gap: 0.85rem;
+}
+.foru-success pre {
+  margin: 0;
+  color: var(--green);
+  white-space: pre;
+  text-shadow: var(--glow);
+  overflow-x: auto;
+  font-size: clamp(0.6rem, 0.5rem + 0.8vw, 0.85rem);
+  line-height: 1.2;
+}
+.foru-success .position {
+  color: var(--amber);
+}
+.foru-again {
+  margin-top: 0.5rem;
+  align-self: start;
+  border: 0;
+  background: none;
+  color: var(--dim);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  padding: 0;
+}
+.foru-again:hover { color: var(--green); }
+
+.foru-footer {
+  position: relative;
+  z-index: 4;
+  flex: 0 0 auto;
+  margin: 0;
+  color: rgba(93, 111, 102, 0.6);
+  font-size: 0.68rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.foru-footer a { color: var(--dim); text-decoration: underline dotted; }
+.foru-footer a:hover { color: var(--green); }
+
+@media (prefers-reduced-motion: reduce) {
+  .foru-root::before { animation: none; }
+  .foru-cursor { animation: none; opacity: 1; }
+}
