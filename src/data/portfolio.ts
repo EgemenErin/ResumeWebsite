@@ -20,6 +20,18 @@ export type Metric = {
 
 export const projects: Project[] = [
   {
+    title: "Athena",
+    eyebrow: "Open source personal project",
+    summary:
+      "A natural-language CSV analytics assistant that runs a Planner → Analyst → Reviewer agent pipeline, turning plain-English questions into pandas code, Plotly charts, and narrative summaries — all with fully local LLM inference.",
+    problem:
+      "How can someone explore and clean a dataset end-to-end using plain English, without writing code or sending sensitive data to an external API?",
+    outcome:
+      "Shipped a sandboxed code-execution layer for safe LLM-generated pandas, an AI-assisted cleaning module that reviews every column in batches of 30 with full undo, and zero-cost unlimited analysis via local Ollama inference.",
+    tools: ["Python", "Streamlit", "Pandas", "Plotly", "Ollama", "LLM agents"],
+    status: "Open source · Jan 2026 – Present",
+  },
+  {
     title: "Emerging Trends in Software",
     eyebrow: "IBM analytics report / Cognos dashboard",
     summary:
@@ -46,6 +58,18 @@ export const projects: Project[] = [
     status: "Presentation project",
     href: "https://canva.link/ixiil8971bf7phi",
     image: "/images/customeranalysis.png",
+  },
+  {
+    title: "US Equity Volatility Analysis",
+    eyebrow: "Data engineering project",
+    summary:
+      "A scheduled ETL pipeline that ingests daily equity data from the Alpha Vantage API, loads it into Azure SQL, and surfaces risk through an interactive Power BI monitoring dashboard.",
+    problem:
+      "How can we track and compare the daily risk profile of multiple equities in near real time, from raw API data all the way to a decision-ready dashboard?",
+    outcome:
+      "Built a Python ETL pipeline for 5 tickers automated via GitHub Actions, engineered a 7-day rolling volatility feature (NVDA: 0.37 vs JNJ: 0.08), and delivered a DAX-driven dashboard tracking price, returns, and volatility across $29bn in total volume.",
+    tools: ["Power BI", "Python", "SQL", "Azure", "Alpha Vantage API", "GitHub Actions"],
+    status: "Data engineering project",
   },
   {
     title: "Muscledia",
