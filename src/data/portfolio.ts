@@ -30,6 +30,8 @@ export const projects: Project[] = [
       "Shipped a sandboxed code-execution layer for safe LLM-generated pandas, an AI-assisted cleaning module that reviews every column in batches of 30 with full undo, and zero-cost unlimited analysis via local Ollama inference.",
     tools: ["Python", "Streamlit", "Pandas", "Plotly", "Ollama", "LLM agents"],
     status: "Open source · Jan 2026 – Present",
+    href: "https://github.com/EgemenErin/Athena",
+    image: "/images/athena.png",
   },
   {
     title: "Emerging Trends in Software",
@@ -70,6 +72,8 @@ export const projects: Project[] = [
       "Built a Python ETL pipeline for 5 tickers automated via GitHub Actions, engineered a 7-day rolling volatility feature (NVDA: 0.37 vs JNJ: 0.08), and delivered a DAX-driven dashboard tracking price, returns, and volatility across $29bn in total volume.",
     tools: ["Power BI", "Python", "SQL", "Azure", "Alpha Vantage API", "GitHub Actions"],
     status: "Data engineering project",
+    href: "https://github.com/EgemenErin/US-Equity-Volatility-Monitor",
+    image: "/images/us-equity-volatility.png",
   },
   {
     title: "Muscledia",
@@ -84,20 +88,6 @@ export const projects: Project[] = [
     status: "Closed source",
     href: "https://github.com/Muscledia/Muscledia-Frontend",
     image: "/images/muscledia.png",
-  },
-  {
-    title: "QGIS Deepness",
-    eyebrow: "Geospatial analysis / research tooling",
-    summary:
-      "An open-source QGIS plugin that makes deep-learning-based remote sensing workflows more approachable for QGIS users.",
-    problem:
-      "How can researchers use orthophoto imagery to classify land use, detect objects, and test models across terrain types?",
-    outcome:
-      "Contributed mainly through documentation support and testing notes, helping clarify workflows for users rather than driving the core plugin development.",
-    tools: ["Documentation", "QGIS", "Remote sensing", "Deep learning workflows", "User guidance"],
-    status: "Documentation support",
-    href: "https://qgis-plugin-deepness.readthedocs.io/en/latest/",
-    image: "/images/deepness.png",
   },
 ];
 

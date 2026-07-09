@@ -25,6 +25,7 @@ export function PortfolioExperience() {
   const rootRef = useRef<HTMLElement | null>(null);
   const orbRef = useRef<HTMLDivElement | null>(null);
   const [now, setNow] = useState<Date | null>(null);
+  const [openProject, setOpenProject] = useState<number | null>(0);
 
   useEffect(() => {
     const updateNow = () => setNow(new Date());
@@ -36,6 +37,11 @@ export function PortfolioExperience() {
       window.clearInterval(interval);
     };
   }, []);
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => ScrollTrigger.refresh(), 460);
+    return () => window.clearTimeout(timeout);
+  }, [openProject]);
 
   const hoursAlive = now ? Math.floor((now.getTime() - birthDate.getTime()) / hourInMs) : null;
   const daysInPoland = now ? Math.floor((now.getTime() - polandArrivalDate.getTime()) / dayInMs) : null;
@@ -65,7 +71,7 @@ export function PortfolioExperience() {
           };
 
           if (reduceMotion) {
-            gsap.set(root.querySelectorAll("[data-reveal], [data-projects] .section-heading, [data-projects] .project-card"), {
+            gsap.set(root.querySelectorAll("[data-reveal], [data-projects] .section-heading, [data-project-row]"), {
               autoAlpha: 1,
               y: 0,
               scale: 1,
@@ -110,84 +116,48 @@ export function PortfolioExperience() {
             });
           });
 
-          if (desktop) {
-            const projectTrack = root.querySelector<HTMLElement>("[data-project-track]");
+          void desktop;
+          void mobile;
 
-            if (projectTrack) {
-              const getScrollDistance = () => Math.max(0, projectTrack.scrollWidth - window.innerWidth);
+          gsap.from("[data-projects] .section-heading", {
+            autoAlpha: 0,
+            y: 52,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: "[data-projects]",
+              start: "top 86%",
+              toggleActions: "play none none reverse",
+            },
+          });
 
-              gsap.to(projectTrack, {
-                x: () => -getScrollDistance(),
-                ease: "none",
-                scrollTrigger: {
-                  trigger: "[data-projects]",
-                  start: "top -18%",
-                  end: () => `+=${getScrollDistance()}`,
-                  scrub: 1,
-                  pin: true,
-                  invalidateOnRefresh: true,
-                  anticipatePin: 1,
-                },
-              });
-            }
-          }
+          const projectRows = gsap.utils.toArray<HTMLElement>("[data-project-row]");
 
-          if (mobile) {
-            gsap.from("[data-projects] .section-heading", {
-              autoAlpha: 0,
-              y: 52,
-              duration: 0.9,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: "[data-projects]",
-                start: "top 86%",
-                toggleActions: "play none none reverse",
-              },
-            });
+          gsap.set(projectRows, { autoAlpha: 0, y: 44 });
 
-            const projectCards = gsap.utils.toArray<HTMLElement>("[data-projects] .project-card");
-
-            gsap.set(projectCards, { autoAlpha: 0, y: 76, scale: 0.96 });
-
-            ScrollTrigger.batch(projectCards, {
-              start: "top 90%",
-              onEnter: (batch) => {
-                gsap.to(batch, {
-                  autoAlpha: 1,
-                  y: 0,
-                  scale: 1,
-                  duration: 0.85,
-                  stagger: 0.12,
-                  overwrite: true,
-                  ease: "power3.out",
-                });
-              },
-              onLeaveBack: (batch) => {
-                gsap.to(batch, {
-                  autoAlpha: 0,
-                  y: 76,
-                  scale: 0.96,
-                  duration: 0.45,
-                  stagger: 0.06,
-                  overwrite: true,
-                  ease: "power2.out",
-                });
-              },
-            });
-
-            gsap.utils.toArray<HTMLElement>("[data-projects] .project-card img").forEach((image) => {
-              gsap.from(image, {
-                scale: 1.08,
-                duration: 1,
+          ScrollTrigger.batch(projectRows, {
+            start: "top 92%",
+            onEnter: (batch) => {
+              gsap.to(batch, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.7,
+                stagger: 0.08,
+                overwrite: true,
                 ease: "power3.out",
-                scrollTrigger: {
-                  trigger: image,
-                  start: "top 92%",
-                  toggleActions: "play none none reverse",
-                },
               });
-            });
-          }
+            },
+            onLeaveBack: (batch) => {
+              gsap.to(batch, {
+                autoAlpha: 0,
+                y: 44,
+                duration: 0.4,
+                stagger: 0.05,
+                overwrite: true,
+                ease: "power2.out",
+              });
+            },
+          });
 
           requestAnimationFrame(() => ScrollTrigger.refresh());
         },
@@ -314,77 +284,116 @@ export function PortfolioExperience() {
           <h2>Projects with a question, a dataset, and a decision behind them.</h2>
         </div>
 
-        <div className="project-track" data-project-track>
-          {projects.map((project, index) => (
-            <article className="project-card" key={project.title}>
-              <div className="project-index">0{index + 1}</div>
-              {project.image && project.href ? (
-                <a
-                  className="project-media"
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${project.title} project`}
-                  title={`${project.title} — ${project.eyebrow}`}
+        <div className="project-list" data-project-list>
+          {projects.map((project, index) => {
+            const isOpen = openProject === index;
+            const panelId = `project-panel-${index}`;
+
+            return (
+              <article
+                className={`project-row${isOpen ? " is-open" : ""}`}
+                key={project.title}
+                data-project-row
+              >
+                <button
+                  type="button"
+                  className="project-row-header"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => setOpenProject(isOpen ? null : index)}
                 >
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} project screenshot — ${project.eyebrow}`}
-                    width={760}
-                    height={430}
-                  />
-                </a>
-              ) : project.image ? (
-                <div className="project-media">
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} project screenshot — ${project.eyebrow}`}
-                    width={760}
-                    height={430}
-                  />
-                </div>
-              ) : (
-                <div className="report-preview" aria-hidden="true">
-                  <span>JS</span>
-                  <span>Python</span>
-                  <span>PostgreSQL</span>
-                  <span>Cloud</span>
-                </div>
-              )}
-              <div className="project-content">
-                <p>{project.eyebrow}</p>
-                <h3>{project.title}</h3>
-                <p>{project.summary}</p>
-                <dl>
-                  <div>
-                    <dt>Question</dt>
-                    <dd>{project.problem}</dd>
+                  <span className="project-index">0{index + 1}</span>
+                  <span className="project-row-heading">
+                    <span className="project-row-eyebrow">{project.eyebrow}</span>
+                    <span className="project-row-title">{project.title}</span>
+                  </span>
+                  <span className="project-row-meta">
+                    <span className="project-row-status">{project.status}</span>
+                    <span className="project-row-toggle" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path
+                          d="M6 9l6 6 6-6"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </button>
+
+                <div className="project-panel" id={panelId} role="region">
+                  <div className="project-panel-inner">
+                    {project.image && project.href ? (
+                      <a
+                        className="project-media"
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title} project`}
+                        title={`${project.title} — ${project.eyebrow}`}
+                      >
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} project screenshot — ${project.eyebrow}`}
+                          width={760}
+                          height={430}
+                        />
+                      </a>
+                    ) : project.image ? (
+                      <div className="project-media">
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} project screenshot — ${project.eyebrow}`}
+                          width={760}
+                          height={430}
+                        />
+                      </div>
+                    ) : (
+                      <div className="report-preview" aria-hidden="true">
+                        <span>JS</span>
+                        <span>Python</span>
+                        <span>PostgreSQL</span>
+                        <span>Cloud</span>
+                      </div>
+                    )}
+                    <div className="project-content">
+                      <p>{project.summary}</p>
+                      <dl>
+                        <div>
+                          <dt>Question</dt>
+                          <dd>{project.problem}</dd>
+                        </div>
+                        <div>
+                          <dt>Outcome</dt>
+                          <dd>{project.outcome}</dd>
+                        </div>
+                      </dl>
+                      <div className="tool-list">
+                        {project.tools.map((tool) => (
+                          <span key={tool}>{tool}</span>
+                        ))}
+                      </div>
+                      {project.href ? (
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`View ${project.title}`}
+                        >
+                          {project.status}
+                        </a>
+                      ) : (
+                        <span className="project-status">{project.status}</span>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <dt>Outcome</dt>
-                    <dd>{project.outcome}</dd>
-                  </div>
-                </dl>
-                <div className="tool-list">
-                  {project.tools.map((tool) => (
-                    <span key={tool}>{tool}</span>
-                  ))}
                 </div>
-                {project.href ? (
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`View ${project.title}`}
-                  >
-                    {project.status}
-                  </a>
-                ) : (
-                  <span className="project-status">{project.status}</span>
-                )}
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </section>
 
